@@ -7,7 +7,6 @@ import 'package:package_teste/arquitetura/layers/domain/usecases/get_carros_por_
 import 'package:package_teste/arquitetura/layers/domain/usecases/salvar_carro_favorito/salvar_carro_favorito_usecase.dart';
 import 'package:package_teste/arquitetura/layers/domain/usecases/salvar_carro_favorito/salvar_carro_favorito_usecase_imp.dart';
 import 'package:package_teste/arquitetura/layers/presentation/controllers/carro_controller.dart';
-
 import '../../layers/data/datasources/local/get_carros_por_cor_local_datasource_imp.dart';
 import '../../layers/data/repositories/get_carros_por_cor_repository_imp.dart';
 import '../../layers/data/repositories/salvar_carro_favorito_repository_imp.dart';
