@@ -21,5 +21,4 @@ class GetCarrosPorCorLocalDataSourceImp implements GetCarrosPorCorDataSource{
     }
     return CarroDto.fromMap(jsonAny);
   }
-  
 }
