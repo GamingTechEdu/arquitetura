@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:package_teste/login_page/pages/components/login/custom_login_component.dart';
+import '../controller/login_controller.dart';
+import 'widgets/custom_text_field_widget.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+
+  final loginController = LoginController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.all(28),
+        padding: const EdgeInsets.all(28),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -16,19 +21,19 @@ class LoginPage extends StatelessWidget {
               Icons.people,
               size: MediaQuery.of(context).size.height * 0.2,
             ),
-            TextField(decoration: InputDecoration(
-              label: Text('Login')
-            ),),
-            SizedBox(height:20),
-            TextField(decoration: InputDecoration(
-              label: Text('Senha'),
+            CustomTextFieldWidget(
+              onChanged: loginController.setLogin,
+              label: 'Login',
             ),
-            obscureText: true,
+            const SizedBox(height: 20),
+            CustomTextFieldWidget(
+              onChanged: loginController.setPass,
+              label: 'Senha',
+              obscureText: true,
             ),
-            SizedBox(height:40),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Login'),
+            const SizedBox(height: 40),
+            CustomLoginButtonComponent(
+              loginController: loginController,
             )
           ],
         ),

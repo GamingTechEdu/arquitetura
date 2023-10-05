@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:package_teste/login_page/pages/details_page.dart';
+import 'package:package_teste/login_page/pages/home_page.dart';
 import 'package:package_teste/login_page/pages/login_page.dart';
 import 'package:package_teste/login_page/pages/splash_page.dart';
 
@@ -20,7 +22,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/splash': (_) => SplashPage(),
-        '/login': (_) => LoginPage()
+        '/login': (_) => LoginPage(),
+        '/home': (_) => HomePage(),
+        '/details': (_) => DetailsPage(),
       },
     );
   }
