@@ -1,4 +1,0 @@
-I - Princípio da Segregação de Interface (Interface Segregation Principle - ISP):
-O ISP afirma que as interfaces não devem ser excessivamente abrangentes. Em vez disso, elas devem
-ser específicas para os casos de uso que as utilizam. Isso evita a criação de classes que são
-obrigadas a implementar métodos irrelevantes para elas, o que pode levar a acoplamento desnecessário.
