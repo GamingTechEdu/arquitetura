@@ -1,0 +1,5 @@
+O - Princípio do Aberto/Fechado (Open/Closed Principle - OCP):
+O princípio OCP preconiza que as entidades de software (classes, módulos, funções, etc.)
+ devem ser abertas para extensão, mas fechadas para modificação. Isso significa que você deve
+ ser capaz de adicionar novas funcionalidades sem modificar o código existente. Isso é alcançado
+  por meio do uso de herança, interfaces e padrões como a Injeção de Dependência.
