@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:package_teste/login_page/repositories/home_repository.dart';
+import 'package:flutter/material.dart';
+
+import '../../../login_page/repositories/repositories.dart';
 import '../models/post_model.dart';
 
 class HomeController {
