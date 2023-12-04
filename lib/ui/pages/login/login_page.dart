@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                 obscureText: true,
               ),
               const SizedBox(height: 40),
-              CustomLoginButtonComponent(
+              LoginButton(
                 loginPresenter: widget.loginPresenter,
               )
             ],
