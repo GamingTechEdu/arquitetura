@@ -1,15 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:package_teste/login_page/service/prefs_service.dart';
-
+import '../../domain/usecases/usecases.dart';
 import '../../ui/pages/login/login_presenter.dart';
 
-class GetxLoginPresenter extends GetxController implements LoginPresenter{
+class GetxLoginPresenter extends GetxController implements LoginPresenter {
+  final Authentication authentication;
+
   var inLoader = Rx<bool>(false);
 
   @override
   Stream<bool> get inLoaderStream => inLoader.stream;
+
+  GetxLoginPresenter({required this.authentication});
 
   String? _login;
   @override
@@ -19,15 +21,32 @@ class GetxLoginPresenter extends GetxController implements LoginPresenter{
   @override
   setPass(String value) => _pass = value;
 
+  // @override
+  // Future<bool> auth() async{
+  //   inLoader.value = true;
+  //   await Future.delayed(Duration(seconds: 2));
+  //   inLoader.value = false;
+  //   if( _login == "admin" && _pass == "123"){
+  //     PrefsService.save(_login!);
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
   @override
-  Future<bool> auth() async{
+  Future<void> auth() async {
     inLoader.value = true;
-    await Future.delayed(Duration(seconds: 2));
-    inLoader.value = false;
-    if( _login == "admin" && _pass == "123"){
-      PrefsService.save(_login!);
-      return true;
+    try {
+      await authentication.auth(AuthenticationParams(
+        username: _login!,
+        password: _pass!,
+      ));
+      print(_login);
+      print(_pass);
+      Get.toNamed('/home');
+    } catch (error) {
+      print(error);
     }
-    return false;
+    inLoader.value = false;
   }
 }

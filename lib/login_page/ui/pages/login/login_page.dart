@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:package_teste/login_page/ui/components/login/custom_login_component.dart';
-import '../../../presentation/presenters/getx_login_presenter.dart';
 import '../../widgets/custom_text_field_widget.dart';
+import 'login_presenter.dart';
 
 class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+  final LoginPresenter loginPresenter;
 
-  final loginPresenter = GetxLoginPresenter();
+  const LoginPage({super.key, required this.loginPresenter});
 
   @override
   Widget build(BuildContext context) {
