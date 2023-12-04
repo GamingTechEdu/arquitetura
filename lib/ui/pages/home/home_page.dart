@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../../../controller/home_controller.dart';
-import '../../../../models/post_model.dart';
-import '../../../../repositories/home_repository.dart';
-import '../../../../repositories/home_repository_imp.dart';
-import '../../../../repositories/home_repository_mock.dart';
-import '../../../../service/prefs_service.dart';
+import '../../../presentation/presenters/home_controller.dart';
+import '../../../domain/entities/post_model.dart';
+import '../../../../../repositories/home_repository_imp.dart';
+import '../../../../../service/prefs_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,7 +32,7 @@ class _HomePageState extends State<HomePage> {
               Navigator.of(context)
                   .pushNamedAndRemoveUntil('/login', (_) => true);
             },
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
           )
         ],
       ),

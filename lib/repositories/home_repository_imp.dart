@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import '../../../models/post_model.dart';
+import '../domain/entities/post_model.dart';
 import '../../../repositories/home_repository.dart';
 
 class HomeRepositoryImp implements HomeRepository {

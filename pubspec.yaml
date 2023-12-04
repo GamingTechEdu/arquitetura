@@ -36,3 +36,6 @@ flutter:
 
   assets:
     - assets/data.json
+    - lib/ui/assets/
+    
+

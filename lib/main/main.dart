@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../ui/pages/details_page.dart';
-import '../../../ui/pages/home_page.dart';
+import '../ui/components/components.dart';
+import '../ui/pages/home/home_page.dart';
 import '../../../ui/pages/splash_page.dart';
 
 import 'factories/pages/login/login_page_factory.dart';
@@ -18,14 +19,14 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.green),
-      initialRoute: '/splash',
-      routes: {
-        '/splash': (_) => SplashPage(),
-        '/login': (_) => makeLoginPage(),
-        '/home': (_) => HomePage(),
-        '/details': (_) => DetailsPage(),
-      },
+      theme: makeAppTheme(),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => SplashPage()),
+        GetPage(name: '/login', page: () => makeLoginPage()),
+        GetPage(name: '/home', page: () => HomePage()),
+        GetPage(name: '/details', page: () => DetailsPage()),
+      ],
     );
   }
 }

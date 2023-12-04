@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../repositories/repositories.dart';
-import '../models/post_model.dart';
+import '../../../../repositories/repositories.dart';
+import '../../domain/entities/post_model.dart';
 
 class HomeController {
   final HomeRepository _homeRepository;
